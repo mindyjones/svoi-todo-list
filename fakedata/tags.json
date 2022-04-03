@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "title": "Дома",
+        "color": "#420101",
+        "icon": "Home"
+    },
+    {
+        "id": 1,
+        "title": "Работа",
+        "color": "#3466ff",
+        "icon": "Work"
+    },
+    {
+        "id": 2,
+        "title": "Список книг",
+        "color": "#e0e0e0",
+        "icon": "Book"
+    }
+]
