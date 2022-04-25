@@ -1,10 +1,10 @@
 import React from 'react'
 import Router from './routes'
+import './App.css'
 
 const App = () => {
 	return (
 		<div>
-			hello blya
 			<Router />
 		</div>
 	)

@@ -7,7 +7,7 @@ export default function Router() {
     return useRoutes([
         {
             path: '/',
-            element: <DefaultLayout background='#F4F6F8' />,
+            element: <DefaultLayout />,
             children: [
                 { path: '/', element: <HomePage /> },
             ]
