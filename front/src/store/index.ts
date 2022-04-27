@@ -1,8 +1,10 @@
 import { applyMiddleware, combineReducers, configureStore } from "@reduxjs/toolkit";
 import userReducer from './reducers/UserSlice'
+import todoReducer from './reducers/TodoSlice'
 
 const rootReducer = combineReducers({
-    userReducer
+    userReducer,
+    todoReducer
 })
 
 export const setupStore = () => {
