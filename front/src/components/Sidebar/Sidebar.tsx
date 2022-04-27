@@ -18,7 +18,7 @@ const Sidebar: FC<ISidebar> = ({ width }) => {
                 <FormatListBulletedIcon className="sidebar__all-icon" /><Typography className="sidebar__all-title">Все задачи</Typography>
             </Grid>
             <Grid item className="sidebar__item sidebar__tags">
-
+                {/* <TagsBlock /> */}
             </Grid>
             <Grid item className="sidebar__item sidebar_add">
 
