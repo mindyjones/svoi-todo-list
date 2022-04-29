@@ -1,0 +1,15 @@
+.sidebar__tag-button {
+    width: 100%;
+    white-space: nowrap;
+}
+
+.sidebar__tag-icon {
+    font-size: 10;
+    margin-right: 1
+}
+
+.sidebar__tag-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
