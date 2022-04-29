@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material'
 import React, { useEffect } from 'react'
+import TodoList from '../components/TodoList'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import { fetchTodo } from '../store/reducers/ActionCreators'
 
@@ -14,11 +15,7 @@ const HomePage: React.FC = () => {
 
     return (
         <div>
-            {
-                todos.map(e =>
-                    <Typography variant='h3'>{e.title}</Typography>
-                )
-            }
+            <TodoList todos={todos} />
         </div>
     )
 }
