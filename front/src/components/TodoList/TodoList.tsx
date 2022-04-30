@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { ITodo } from '../../models/ITodo'
-import { Typography } from '@mui/material'
+import { Container } from '@mui/material'
+import TaskItem from '../Task/TaskItem'
 
 interface ITodoList {
     todos: ITodo[]
@@ -9,16 +10,14 @@ interface ITodoList {
 
 const TodoList: React.FC<ITodoList> = ({ todos }) => {
     return (
-        <ul>
+        <Container>
             {todos.map(e =>
-                <li>
-                    <Typography variant='h3'>
-                        {e.title}
-                    </Typography>
-                </li>
+                <Container key={e.id} sx={{ margin: 2 }}>
+                    <TaskItem task={e} />
+                </Container>
             )}
 
-        </ul>
+        </Container>
     )
 }
 

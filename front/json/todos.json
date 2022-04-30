@@ -3,22 +3,26 @@
         {
             "id": 1,
             "title": "Вынести мусор",
-            "date": ""
+            "date": "",
+            "state": "created"
         },
         {
             "id": 2,
             "title": "Включить робот пылесос",
-            "date": ""
+            "date": "",
+            "state": "created"
         },
         {
             "id": 3,
             "title": "Купить сок",
-            "date": ""
+            "date": "",
+            "state": "completed"
         },
         {
             "id": 4,
             "title": "Поесть",
-            "date": ""
+            "date": "",
+            "state": "archived"
         }
     ]
 }
