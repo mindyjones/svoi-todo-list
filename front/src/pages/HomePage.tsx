@@ -1,18 +1,12 @@
 import { Divider, Typography } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { FC } from 'react'
 import TodoList from '../components/TodoList'
-import { useAppDispatch, useAppSelector } from '../hooks/redux'
-import { fetchTodo } from '../store/reducers/ActionCreators'
+import { todoAPI } from '../services/TodoService'
 
 const fakeTag = 'Домашние дела'
 
-const HomePage: React.FC = () => {
-    const dispatch = useAppDispatch()
-    const { todos } = useAppSelector(state => state.todoReducer)
-
-    useEffect(() => {
-        dispatch(fetchTodo())
-    }, [])
+const HomePage: FC = () => {
+    const { data: todos } = todoAPI.useFetchAllTodosQuery(0)
 
     return (
         <>

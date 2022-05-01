@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import { FormGroup, Stack, Typography } from '@mui/material'
 import useTaskIcon from '../../hooks/useTaskIcon'
-import { ITodo } from '../../types/types'
+import { ITodo } from '../../models/ITodo'
 
 interface TaskItemProps {
   task: ITodo
