@@ -11,34 +11,11 @@ interface ITagsBlock {
     onClick: (e: number) => void;
 }
 
-const fakeTags = [
-    {
-        "id": 1,
-        "title": "Работа",
-        "color": "#42B883"
-    },
-    {
-        "id": 2,
-        "title": "Домашние дела дела дела",
-        "color": "#64C4ED"
-    },
-    {
-        "id": 3,
-        "title": "Покупки",
-        "color": "#C9D1D3"
-    },
-    {
-        "id": 4,
-        "title": "Фильмы",
-        "color": "#FFBBCC"
-    }
-]
-
 const TagsBlock: FC<ITagsBlock> = ({ tags, selected, maxWidth, onClick }) => {
     return (
         <Stack sx={{ maxWidth }}>
-            {
-                fakeTags.map(tag =>
+            {tags
+                && tags.map(tag =>
                     <Button
                         variant={selected === tag.id ? "contained" : "text"}
                         key={tag.id}

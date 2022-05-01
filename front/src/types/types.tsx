@@ -8,7 +8,8 @@ export interface ITodo {
     id: number,
     title: string,
     date: string,
-    state: TodoState
+    state: TodoState,
+    tags: number[]
 }
 
 export interface IUser {

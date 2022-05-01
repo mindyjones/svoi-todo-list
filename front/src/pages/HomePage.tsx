@@ -14,7 +14,6 @@ const HomePage: React.FC = () => {
         dispatch(fetchTodo())
     }, [])
 
-
     return (
         <>
             <Typography variant='h1' sx={{ marginBottom: 3 }}>{fakeTag}</Typography>
