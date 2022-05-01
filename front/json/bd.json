@@ -1,0 +1,81 @@
+{
+    "todos": [
+        {
+            "id": 1,
+            "title": "Вынести мусор",
+            "date": "",
+            "state": "created",
+            "tags": [
+                2
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Включить робот пылесос",
+            "date": "",
+            "state": "created",
+            "tags": [
+                2
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Купить сок",
+            "date": "",
+            "state": "completed",
+            "tags": [
+                2,
+                3
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Допилить таски",
+            "date": "",
+            "state": "archived",
+            "tags": [
+                1
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Изучить TypeScript",
+            "date": "",
+            "state": "archived",
+            "tags": [
+                1
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Выписать фильмы из тик-тока",
+            "date": "",
+            "state": "archived",
+            "tags": [
+                4
+            ]
+        }
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "title": "Работа",
+            "color": "#42B883"
+        },
+        {
+            "id": 2,
+            "title": "Домашние дела дела дела",
+            "color": "#64C4ED"
+        },
+        {
+            "id": 3,
+            "title": "Покупки",
+            "color": "#C9D1D3"
+        },
+        {
+            "id": 4,
+            "title": "Фильмы",
+            "color": "#FFBBCC"
+        }
+    ]
+}

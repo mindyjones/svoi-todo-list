@@ -1,3 +1,3 @@
 ```bash 
-json-server --watch ./json/todos.json 
+json-server --watch ./json/bd.json 
 ```
