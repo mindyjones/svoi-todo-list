@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ITodo } from "../../types/types";
+import { fetchTodo } from './ActionCreators';
 
 interface TodoState {
     todos: ITodo[];
@@ -16,16 +17,17 @@ const initialState: TodoState = {
 export const todoSlice = createSlice({
     name: 'todo',
     initialState,
-    reducers: {
-        todosFetching(state) {
-            state.isLoading = true;
-        },
-        todosFetchingSuccess(state, action: PayloadAction<ITodo[]>) {
+    reducers: {},
+    extraReducers: {
+        [fetchTodo.fulfilled.type]: (state, action: PayloadAction<ITodo[]>) => {
             state.isLoading = false;
             state.error = '';
             state.todos = action.payload;
         },
-        todosFetchingError(state, action: PayloadAction<string>) {
+        [fetchTodo.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [fetchTodo.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false;
             state.error = action.payload
         }

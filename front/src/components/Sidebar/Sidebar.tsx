@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react'
-import { Button, Grid, Typography } from '@mui/material'
+import { Button, Grid, Skeleton, Stack, Typography } from '@mui/material'
 import './Sidebar.css'
 import TagsBlock from '../TagsBlock';
 import CustomButton from '../CustomButton/CustomButton';
@@ -12,7 +12,7 @@ interface ISidebar {
 
 const Sidebar: FC<ISidebar> = ({ width }) => {
     const dispatch = useAppDispatch()
-    const { tags } = useAppSelector(state => state.tagsReducer)
+    const { tags, isLoading, error } = useAppSelector(state => state.tagsReducer)
 
     useEffect(() => {
         dispatch(fetchTags())
@@ -29,7 +29,6 @@ const Sidebar: FC<ISidebar> = ({ width }) => {
         <Grid
             container
             direction="column"
-            justifyContent="center"
             className='sidebar'
             sx={{ width: 200 }}>
             <Grid item container
@@ -46,7 +45,16 @@ const Sidebar: FC<ISidebar> = ({ width }) => {
                 </CustomButton>
             </Grid>
             <Grid item className="sidebar__item">
-                <TagsBlock onClick={onClick} maxWidth={200} selected={tagSelected} tags={tags} />
+                {
+                    isLoading
+                        ? <Stack>
+                            <Skeleton height={36} />
+                            <Skeleton height={36} />
+                            <Skeleton height={36} />
+                            <Skeleton height={36} />
+                        </Stack>
+                        : <TagsBlock onClick={onClick} maxWidth={200} selected={tagSelected} tags={tags} />
+                }
             </Grid>
             <Grid item className="sidebar__item sidebar_add">
 

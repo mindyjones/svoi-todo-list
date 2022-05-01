@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ITag } from "../../types/types";
+import { fetchTags } from "./ActionCreators";
 
 interface TagState {
     tags: ITag[];
@@ -16,16 +17,17 @@ const initialState: TagState = {
 export const tagsSlice = createSlice({
     name: 'tags',
     initialState,
-    reducers: {
-        tagsFetching(state) {
-            state.isLoading = true;
-        },
-        tagsFetchingSuccess(state, action: PayloadAction<ITag[]>) {
+    reducers: {},
+    extraReducers: {
+        [fetchTags.fulfilled.type]: (state, action: PayloadAction<ITag[]>) => {
             state.isLoading = false;
             state.error = '';
             state.tags = action.payload;
         },
-        tagsFetchingError(state, action: PayloadAction<string>) {
+        [fetchTags.pending.type]: (state) => {
+            state.isLoading = true;
+        },
+        [fetchTags.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false;
             state.error = action.payload
         }
