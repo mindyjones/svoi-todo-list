@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { ITodo } from '../../models/ITodo'
 import { Container } from '@mui/material'
 import TaskItem from '../Task/TaskItem'
+import { ITodo } from '../../types/types'
 
-interface ITodoList {
+interface TodoListProps {
     todos: ITodo[]
 }
 
-const TodoList: React.FC<ITodoList> = ({ todos }) => {
+const TodoList: React.FC<TodoListProps> = ({ todos }) => {
     return (
         <Container>
             {todos.map(e =>
@@ -16,7 +16,6 @@ const TodoList: React.FC<ITodoList> = ({ todos }) => {
                     <TaskItem task={e} />
                 </Container>
             )}
-
         </Container>
     )
 }

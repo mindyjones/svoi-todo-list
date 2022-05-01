@@ -1,6 +1,6 @@
 import axios from "axios";
 import { AppDispatch } from "..";
-import { ITodo } from "../../models/ITodo";
+import { ITodo } from "../../types/types";
 import { todoSlice } from "./TodoSlice";
 
 

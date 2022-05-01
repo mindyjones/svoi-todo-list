@@ -1,9 +1,8 @@
 import React, { FC } from 'react'
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
-import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
-import { TodoState } from '../models/ITodo';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-interface TaskIconProps {
+export interface TaskIconProps {
     state: string
 }
 
@@ -11,11 +10,11 @@ const useTaskIcon: FC<TaskIconProps> = ({ state }) => {
     const findIcon = () => {
         switch (state) {
             case 'created':
-                return <CircleOutlinedIcon />
+                return <CircleOutlinedIcon fontSize='large' />
             case 'completed':
-                return <CheckCircleOutlinedIcon color='success' />
+                return <CheckCircleIcon fontSize='large' color='success' />
             case 'archived':
-                return <CheckCircleOutlinedIcon color='disabled' />
+                return <CheckCircleIcon fontSize='large' color='disabled' />
             default:
                 return <CircleOutlinedIcon />
         }

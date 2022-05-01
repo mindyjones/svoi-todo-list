@@ -1,6 +1,13 @@
+.sidebar__tags {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .sidebar__tag-button {
     width: 100%;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sidebar__tag-icon {
@@ -8,8 +15,4 @@
     margin-right: 1
 }
 
-.sidebar__tag-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+.sidebar__tag-title {}
