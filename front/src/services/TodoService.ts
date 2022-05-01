@@ -6,9 +6,16 @@ export const todoAPI = createApi({
     reducerPath: 'todoAPI',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000' }),
     endpoints: (build) => ({
-        fetchAllTodos: build.query<ITodo[], number>({
+        fetchAllTodos: build.query<ITodo[], any>({
             query: () => ({
                 url: '/todos'
+            })
+        }),
+        createTodo: build.mutation<ITodo, ITodo>({
+            query: (todo) => ({
+                url: '/todos',
+                method: 'POST',
+                body: todo
             })
         })
     })

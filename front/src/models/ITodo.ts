@@ -5,7 +5,7 @@ export enum TodoState {
 }
 
 export interface ITodo {
-    id: number,
+    id?: number,
     title: string,
     date: string,
     state: TodoState,
