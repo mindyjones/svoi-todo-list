@@ -1,7 +1,10 @@
-import { Button, Stack, Typography } from '@mui/material'
+
 import React, { FC } from 'react'
+
+import { Button, Stack, Typography } from '@mui/material'
 import CircleIcon from '@mui/icons-material/Circle';
-import { ITag } from '../../types/types';
+
+import { ITag } from "models/ITag"
 import './TagsBlock.css'
 
 interface ITagsBlock {

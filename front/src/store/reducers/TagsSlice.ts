@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ITag } from "../../types/types";
+import { ITag } from "models";
 import { fetchTags } from "./ActionCreators";
 
 interface TagState {

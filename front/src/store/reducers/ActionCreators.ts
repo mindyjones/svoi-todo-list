@@ -1,6 +1,5 @@
 import axios from "axios";
-import { ITag } from "../../types/types";
-import { ITodo } from "../../models/ITodo"
+import { ITag, ITodo } from "models"
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchTags = createAsyncThunk(

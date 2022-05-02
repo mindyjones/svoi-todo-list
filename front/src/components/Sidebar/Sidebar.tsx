@@ -1,22 +1,17 @@
 import React, { FC, useEffect, useState } from 'react'
-import { Button, Grid, Skeleton, Stack, Typography } from '@mui/material'
-import './Sidebar.css'
+import { Grid, Skeleton, Stack, Typography } from '@mui/material'
 import TagsBlock from '../TagsBlock';
 import CustomButton from '../CustomButton/CustomButton';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { fetchTags } from '../../store/reducers/ActionCreators';
+import { tagAPI } from 'services/TagsService';
+
+import './Sidebar.css'
 interface ISidebar {
     width?: number
 }
 
 const Sidebar: FC<ISidebar> = ({ width }) => {
-    const dispatch = useAppDispatch()
-    const { tags, isLoading, error } = useAppSelector(state => state.tagsReducer)
-
-    useEffect(() => {
-        dispatch(fetchTags())
-    }, [])
+    const { data: tags, error, isLoading } = tagAPI.useFetchAllTagsQuery(0)
 
 
     const [tagSelected, setTagSelected] = useState(0)
