@@ -13,6 +13,8 @@ interface TodoListProps {
 const TodoList: React.FC<TodoListProps> = ({ todos }) => {
     const [newTaskText, setNewTaskText] = useState('')
     const [createTodo, { }] = todoAPI.useCreateTodoMutation()
+    const [updateTodo, { }] = todoAPI.useUpdateTodoMutation()
+    const [removeTodo, { }] = todoAPI.useRemoveTodoMutation()
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setNewTaskText(event.target.value)
@@ -27,17 +29,26 @@ const TodoList: React.FC<TodoListProps> = ({ todos }) => {
             state: "created",
             tags: [],
         } as ITodo)
+        setNewTaskText('')
+    }
+
+    const removeHandler = (task: ITodo) => {
+        removeTodo(task)
+    }
+
+    const updateHandler = (task: ITodo) => {
+        updateTodo(task)
     }
 
     return (
-        <Container>
+        <Container className='tasks__container'>
             {todos && todos.map(e =>
                 <Container key={e.id} className='task__container'>
-                    <TaskItem task={e} />
+                    <TaskItem task={e} remove={removeHandler} update={updateHandler} />
                 </Container>
             )}
             <Box component="form" onSubmit={sumbitHandler} sx={{ marginBottom: 20 }}>
-                <TodoCreate onChange={handleChange} />
+                <TodoCreate onChange={handleChange} newTaskText={newTaskText} />
             </Box>
         </Container>
     )

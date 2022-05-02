@@ -2,17 +2,18 @@ import { TextField } from '@mui/material'
 import React, { FC } from 'react'
 
 interface TodoCreateProps {
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    newTaskText: string;
 }
 
-const TodoCreate: FC<TodoCreateProps> = ({ onChange }) => {
+const TodoCreate: FC<TodoCreateProps> = ({ onChange, newTaskText }) => {
     return (
         <TextField
             fullWidth
             // label="fullWidth"
-            id="newTask"
             variant="standard"
             onChange={onChange}
+            value={newTaskText}
         />
     )
 }

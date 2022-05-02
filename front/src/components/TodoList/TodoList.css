@@ -2,3 +2,7 @@
     margin: 10px;
     margin-left: 0;
 }
+
+.tasks__container {
+    padding-top: 32px;
+}
