@@ -4,8 +4,6 @@ import TodoList from 'components/TodoList'
 import { todoAPI } from 'services/TodoService'
 import { useTypedSelector } from 'hooks/useTypedSelector'
 
-const fakeTag = 'Домашние дела'
-
 const HomePage: FC = () => {
     const { data: todos, error, isLoading } = todoAPI.useFetchAllTodosQuery(0)
 
@@ -20,8 +18,6 @@ const HomePage: FC = () => {
 
     return (
         <>
-            <Typography variant='h1' sx={{ marginBottom: 3 }}>{fakeTag}</Typography>
-            <Divider />
             {isLoading
                 ? <Stack>
                     <Skeleton className='task__container' />
@@ -29,7 +25,7 @@ const HomePage: FC = () => {
                     <Skeleton className='task__container' />
                     <Skeleton className='task__container' />
                 </Stack>
-                : <TodoList todos={filteredTodos(selectedTag.id)} />
+                : <TodoList todos={filteredTodos(selectedTag.id)} selectedTag={selectedTag} />
             }
         </>
     )

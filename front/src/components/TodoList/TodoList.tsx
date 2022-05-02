@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 
-import { Box, Container } from '@mui/material'
+import { Box, Container, Divider, Typography } from '@mui/material'
 import TaskItem from '../Task/TaskItem'
-import { ITodo } from '../../models/ITodo'
 import './TodoList.css'
-import TodoCreate from '../TodoCreate/TodoCreate'
-import { todoAPI } from './../../services/TodoService';
+import TodoCreate from 'components/TodoCreate/TodoCreate'
+import { todoAPI } from 'services/TodoService';
+import { ITodo, ITag } from 'models'
 interface TodoListProps {
-    todos?: ITodo[]
+    todos?: ITodo[],
+    selectedTag: ITag
 }
 
-const TodoList: React.FC<TodoListProps> = ({ todos }) => {
+const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
     const [newTaskText, setNewTaskText] = useState('')
     const [createTodo, { }] = todoAPI.useCreateTodoMutation()
     const [updateTodo, { }] = todoAPI.useUpdateTodoMutation()
@@ -41,16 +42,23 @@ const TodoList: React.FC<TodoListProps> = ({ todos }) => {
     }
 
     return (
-        <Container className='tasks__container'>
-            {todos && todos.map(e =>
-                <Container key={e.id} className='task__container'>
-                    <TaskItem task={e} remove={removeHandler} update={updateHandler} />
-                </Container>
-            )}
-            <Box component="form" onSubmit={sumbitHandler} sx={{ marginBottom: 20 }}>
-                <TodoCreate onChange={handleChange} newTaskText={newTaskText} />
-            </Box>
-        </Container>
+        <>
+            <Typography className='todolist__title' variant='h1'>{selectedTag.title || 'Все задачи'}</Typography>
+            <Divider />
+
+            <Container className='todolist__container'>
+                {todos && todos.map(e =>
+                    <Container key={e.id} className='task__container'>
+                        <TaskItem task={e} remove={removeHandler} update={updateHandler} />
+                    </Container>
+                )}
+                <Box component="form" onSubmit={sumbitHandler}
+                    className='todolist__input'
+                >
+                    <TodoCreate onChange={handleChange} newTaskText={newTaskText} />
+                </Box>
+            </Container>
+        </>
     )
 }
 

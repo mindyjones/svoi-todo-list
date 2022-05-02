@@ -3,6 +3,15 @@
     margin-left: 0;
 }
 
-.tasks__container {
+.todolist__container {
     padding-top: 32px;
+}
+
+.todolist__input {
+    margin-top: 32px;
+}
+
+.todolist__title {
+    margin-bottom: 24px;
+    color: #64C4ED;
 }
