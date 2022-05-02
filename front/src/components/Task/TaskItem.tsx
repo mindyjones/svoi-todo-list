@@ -28,7 +28,9 @@ const TaskItem: FC<TaskItemProps> = ({ task, remove, update }) => {
 		<FormGroup>
 			<Grid alignItems="center" direction='row' spacing={3} container>
 				<Grid item xs={1}>
-					{icon}
+					<IconButton onClick={handleStateUpdate}>
+						{icon}
+					</IconButton>
 				</Grid>
 				<Grid item xs={9}>
 					<Typography variant='body1'>
@@ -38,7 +40,8 @@ const TaskItem: FC<TaskItemProps> = ({ task, remove, update }) => {
 				<Grid item xs={2}>
 					<IconButton onClick={handleRemove}>
 						<ClearIcon />
-					</IconButton> </Grid>
+					</IconButton>
+				</Grid>
 			</Grid>
 		</FormGroup>
 	)
