@@ -11,7 +11,7 @@ interface ITagsBlock {
     tags?: ITag[];
     selected?: number;
     maxWidth: string | number;
-    onClick: (e: number) => void;
+    onClick: (e: ITag) => void;
 }
 
 const TagsBlock: FC<ITagsBlock> = ({ tags, selected, maxWidth, onClick }) => {
@@ -32,7 +32,7 @@ const TagsBlock: FC<ITagsBlock> = ({ tags, selected, maxWidth, onClick }) => {
                             paddingRight: 2,
                             justifyContent: "flex-start",
                         }}
-                        onClick={() => onClick(tag.id)}
+                        onClick={() => onClick(tag)}
                         fullWidth
                     >
                         <Typography className="sidebar__tag-title">{tag.title}</Typography>
