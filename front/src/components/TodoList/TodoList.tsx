@@ -28,7 +28,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
             title: newTaskText,
             date: "",
             state: "created",
-            tags: [],
+            tags: [selectedTag.id],
         } as ITodo)
         setNewTaskText('')
     }
