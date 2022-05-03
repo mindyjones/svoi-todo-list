@@ -4,13 +4,20 @@ import { ITag } from 'models';
 
 import { Box, TextField, Typography } from '@mui/material'
 import EditIcon from '@mui/icons-material/Edit';
+import { tagAPI } from 'services/TagsService';
+import { useTypedSelector } from 'hooks/useTypedSelector';
+import { useActions } from 'hooks/useActions';
 interface TodoListTitleProps {
     selectedTag: ITag
 }
 
-const TodoListTitle: FC<TodoListTitleProps> = ({ selectedTag }) => {
+const TodoListTitle: FC<TodoListTitleProps> = () => {
     const [editeble, setEditeble] = useState(false)
-    const [newTitle, setNewTitle] = useState(selectedTag.title)
+    const [newTitle, setNewTitle] = useState('')
+
+    const { selectedTag } = useTypedSelector(state => state)
+    const { changeTag } = useActions()
+    const [updateTag, { }] = tagAPI.useUpdateTagMutation()
 
     const handleClick = () => {
         setNewTitle(selectedTag.title)
@@ -24,14 +31,8 @@ const TodoListTitle: FC<TodoListTitleProps> = ({ selectedTag }) => {
 
     const sumbitHandler: React.FormEventHandler<HTMLFormElement> = async (event: React.FormEvent<HTMLFormElement>) => {
         setEditeble(false)
-        // event.preventDefault();
-        // await createTodo({
-        //     title: newTaskText,
-        //     date: "",
-        //     state: "created",
-        //     tags: [selectedTag.id],
-        // } as ITodo)
-        // setNewTaskText('')
+        updateTag({ ...selectedTag, title: newTitle })
+        changeTag({ ...selectedTag, title: newTitle })
     }
 
     return (

@@ -14,9 +14,9 @@ const rootReducer = combineReducers({
 const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
-        // getDefaultMiddleware().concat(tagAPI.middleware)
-        getDefaultMiddleware().concat(todoAPI.middleware)
-
+        getDefaultMiddleware()
+            .concat(todoAPI.middleware)
+            .concat(tagAPI.middleware),
 })
 
 export const setupStore = () => {
