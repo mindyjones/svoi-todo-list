@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 
-import { Box, Container, Divider, Typography } from '@mui/material'
-import TaskItem from '../Task/TaskItem'
-import './TodoList.css'
-import TodoCreate from 'components/TodoCreate/TodoCreate'
+import { Box, Container, Divider, IconButton, Typography } from '@mui/material'
+
 import { todoAPI } from 'services/TodoService';
 import { ITodo, ITag } from 'models'
+
+import TaskItem from 'components/Task/TaskItem'
+import TodoCreate from 'components/TodoList/TodoCreate/TodoCreate'
+
+import './TodoList.css'
+import TodoListTitle from './TodoListTitle';
 interface TodoListProps {
     todos?: ITodo[],
     selectedTag: ITag
@@ -23,7 +27,6 @@ const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
 
     const sumbitHandler: React.FormEventHandler<HTMLFormElement> = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(newTaskText)
         await createTodo({
             title: newTaskText,
             date: "",
@@ -43,7 +46,7 @@ const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
 
     return (
         <>
-            <Typography className='todolist__title' variant='h1'>{selectedTag.title || 'Все задачи'}</Typography>
+            <TodoListTitle selectedTag={selectedTag} />
             <Divider />
 
             <Container className='todolist__container'>

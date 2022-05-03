@@ -7,11 +7,37 @@
     padding-top: 32px;
 }
 
-.todolist__input {
-    margin-top: 32px;
+.todolist__title {
+    font-weight: 700;
+    margin-bottom: 24px;
+    font-size: 48px;
 }
 
-.todolist__title {
-    margin-bottom: 24px;
-    color: #64C4ED;
+.todolist__title-tag {
+    cursor: pointer;
+}
+
+.todolist__title-input {
+    font-size: 48px;
+    padding: 0;
+    height: 60px;
+}
+
+.todolist__title-input:before {
+    border: none
+}
+
+.todolist__title-tag :hover {
+    text-decoration: underline;
+}
+
+.todolist__title-tag :hover .todolist__title-edit {
+    font-size: 32px;
+}
+
+.todolist__title-edit {
+    margin-left: 12px;
+    font-size: 26px;
+
+    transition: font-size 0.2s ease-in;
 }

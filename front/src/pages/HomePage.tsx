@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import { Divider, Skeleton, Stack, Typography } from '@mui/material'
+import { Skeleton, Stack } from '@mui/material'
+
 import TodoList from 'components/TodoList'
 import { todoAPI } from 'services/TodoService'
 import { useTypedSelector } from 'hooks/useTypedSelector'
