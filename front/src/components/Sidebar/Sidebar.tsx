@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useState } from 'react'
-import { Grid, Skeleton, Stack, Typography } from '@mui/material'
+import { FC } from 'react'
+import { Grid, Popover, Skeleton, Stack, Typography } from '@mui/material'
 import TagsBlock from '../TagsBlock';
-import CustomButton from '../CustomButton/CustomButton';
+import CustomButton from '../CustomButton';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import { tagAPI } from 'services/TagsService';
 
@@ -9,6 +9,7 @@ import './Sidebar.css'
 import { useActions } from 'hooks/useActions';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { ITag } from 'models';
+import AddTagBlock from 'components/AddTagBlock';
 interface ISidebar {
     width?: number
 }
@@ -27,7 +28,8 @@ const Sidebar: FC<ISidebar> = ({ width }) => {
             container
             direction="column"
             className='sidebar'
-            sx={{ width: 200 }}>
+            sx={{ width: 200 }}
+        >
             <Grid item container
                 direction="row"
                 alignItems="center"
@@ -43,7 +45,7 @@ const Sidebar: FC<ISidebar> = ({ width }) => {
                     <Typography className="sidebar__tag-title">Все задачи</Typography>
                 </CustomButton>
             </Grid>
-            <Grid item className="sidebar__item">
+            <Grid item className="sidebar__item" mb={3}>
                 {
                     isLoading
                         ? <Stack>
@@ -55,8 +57,8 @@ const Sidebar: FC<ISidebar> = ({ width }) => {
                         : <TagsBlock onClick={onClick} maxWidth={200} selected={selectedTag.id} tags={tags} />
                 }
             </Grid>
-            <Grid item className="sidebar__item sidebar_add">
-
+            <Grid item className="sidebar__item sidebar__add">
+                <AddTagBlock />
             </Grid>
         </Grid >
     )

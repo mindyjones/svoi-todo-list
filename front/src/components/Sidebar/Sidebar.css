@@ -16,5 +16,18 @@
 }
 
 .sidebar__item {
-    /* max-width: 160px; */
+    max-width: 160px;
+}
+
+.sidebar__add {
+    color: #767676;
+}
+
+.sidebar__tag-button {
+    white-space: 'nowrap';
+    overflow: 'hidden';
+    text-overflow: 'ellipsis';
+    padding-left: 2;
+    padding-right: 2;
+    justify-content: flex-start;
 }

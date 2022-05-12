@@ -17,7 +17,7 @@ const DefaultLayout: React.FC<LayoutProps> =
         return (
             <Container maxWidth='lg' sx={{ minHeight: 500 }}>
                 <Grid container style={{ background, height: '100%', width: '100%' }} >
-                    <Grid item xs={3}>
+                    <Grid item xs={3} >
                         <Sidebar width={3} />
                     </Grid>
                     <Grid item xs={9} mt={5}>

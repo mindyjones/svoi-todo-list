@@ -20,7 +20,7 @@ interface CustomButtonProps {
     icon?: ReactNode,
     children?: ReactNode,
     className?: string,
-    onClick?: () => void;
+    onClick?: (a: any) => void;
 }
 
 const CustomButton: FC<CustomButtonProps> =

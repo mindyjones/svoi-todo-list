@@ -24,14 +24,6 @@ const TagsBlock: FC<ITagsBlock> = ({ tags, selected, maxWidth, onClick }) => {
                         key={tag.id}
                         className='sidebar__tag-button'
                         startIcon={<CircleIcon className='sidebar__icon' sx={{ color: tag.color }} />}
-                        sx={{
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            paddingLeft: 2,
-                            paddingRight: 2,
-                            justifyContent: "flex-start",
-                        }}
                         onClick={() => onClick(tag)}
                         fullWidth
                     >
