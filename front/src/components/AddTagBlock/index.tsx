@@ -4,7 +4,6 @@ import { Typography, Popover, Grid, TextField, Button } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 
 import CustomButton from 'components/CustomButton'
-import CircleIcon from '@mui/icons-material/Circle';
 import { tagsColor } from 'theme/tagsColor';
 import Iconify from 'components/iconify';
 

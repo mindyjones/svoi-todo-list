@@ -6,7 +6,7 @@ import { todoAPI } from 'services/TodoService'
 import { useTypedSelector } from 'hooks/useTypedSelector'
 
 const HomePage: FC = () => {
-    const { data: todos, error, isLoading } = todoAPI.useFetchAllTodosQuery(0)
+    const { data: todos, isLoading } = todoAPI.useFetchAllTodosQuery(0)
 
     const { selectedTag } = useTypedSelector(state => state)
 

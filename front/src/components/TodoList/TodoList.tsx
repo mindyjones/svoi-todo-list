@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Box, Container, Divider, IconButton, Typography } from '@mui/material'
+import { Box, Container, Divider } from '@mui/material'
 
 import { todoAPI } from 'services/TodoService';
 import { ITodo, ITag } from 'models'
@@ -17,9 +17,9 @@ interface TodoListProps {
 
 const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
     const [newTaskText, setNewTaskText] = useState('')
-    const [createTodo, { }] = todoAPI.useCreateTodoMutation()
-    const [updateTodo, { }] = todoAPI.useUpdateTodoMutation()
-    const [removeTodo, { }] = todoAPI.useRemoveTodoMutation()
+    const [createTodo] = todoAPI.useCreateTodoMutation()
+    const [updateTodo] = todoAPI.useUpdateTodoMutation()
+    const [removeTodo] = todoAPI.useRemoveTodoMutation()
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setNewTaskText(event.target.value)

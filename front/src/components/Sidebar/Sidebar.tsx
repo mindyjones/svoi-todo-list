@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Grid, Popover, Skeleton, Stack, Typography } from '@mui/material'
+import { Grid, Skeleton, Stack, Typography } from '@mui/material'
 import TagsBlock from '../TagsBlock';
 import CustomButton from '../CustomButton';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
@@ -15,7 +15,7 @@ interface ISidebar {
 }
 
 const Sidebar: FC<ISidebar> = ({ width }) => {
-    const { data: tags, error, isLoading } = tagAPI.useFetchAllTagsQuery(0)
+    const { data: tags, isLoading } = tagAPI.useFetchAllTagsQuery(0)
     const { changeTag } = useActions()
     const { selectedTag } = useTypedSelector(state => state)
 

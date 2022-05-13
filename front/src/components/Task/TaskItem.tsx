@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 
-import { FormGroup, Grid, IconButton, Stack, Typography } from '@mui/material'
-import ClearIcon from '@mui/icons-material/Clear';
+import { FormGroup, Grid, IconButton, Typography } from '@mui/material'
 
 import useTaskIcon from 'hooks/useTaskIcon'
 import { ITodo, TodoState } from 'models/ITodo'
