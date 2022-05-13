@@ -6,6 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import CustomButton from 'components/CustomButton'
 import CircleIcon from '@mui/icons-material/Circle';
 import { tagsColor } from 'theme/tagsColor';
+import Iconify from 'components/iconify';
 
 const AddTagBlock = () => {
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -61,7 +62,7 @@ const AddTagBlock = () => {
                     <Grid item container justifyContent='space-between' mb={2}>
                         {
                             Object.values(tagsColor).map(color =>
-                                <CircleIcon key={color} sx={{ color, border: '1px solid grey' }} />
+                                <Iconify icon='akar-icons:circle-fill' key={color} sx={{ color, border: '1px solid grey', fontSize: 24 }} />
                             )
                         }
                     </Grid>

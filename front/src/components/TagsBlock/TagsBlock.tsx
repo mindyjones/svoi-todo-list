@@ -6,6 +6,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 
 import { ITag } from "models/ITag"
 import './TagsBlock.css'
+import Iconify from 'components/iconify';
 
 interface ITagsBlock {
     tags?: ITag[];
@@ -23,7 +24,7 @@ const TagsBlock: FC<ITagsBlock> = ({ tags, selected, maxWidth, onClick }) => {
                         variant={selected === tag.id ? "contained" : "text"}
                         key={tag.id}
                         className='sidebar__tag-button'
-                        startIcon={<CircleIcon className='sidebar__icon' sx={{ color: tag.color }} />}
+                        startIcon={<Iconify icon='akar-icons:circle-fill' sx={{ color: tag.color }} />}
                         onClick={() => onClick(tag)}
                         fullWidth
                     >

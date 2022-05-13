@@ -1,22 +1,21 @@
-import React, { FC } from 'react'
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-
+import { FC } from 'react'
+import Iconify from 'components/iconify';
 export interface TaskIconProps {
-    state: string
+    state: string,
+    fontSize?: number
 }
 
-const useTaskIcon: FC<TaskIconProps> = ({ state }) => {
+const useTaskIcon: FC<TaskIconProps> = ({ state, fontSize }) => {
     const findIcon = () => {
         switch (state) {
             case 'created':
-                return <CircleOutlinedIcon fontSize='large' />
+                return <Iconify icon='akar-icons:circle' sx={{ fontSize: fontSize || 24 }} />
             case 'completed':
-                return <CheckCircleIcon fontSize='large' color='success' />
+                return <Iconify icon='akar-icons:circle-check' sx={{ fontSize: fontSize || 24, color: '#42B883' }} />
             case 'archived':
-                return <CheckCircleIcon fontSize='large' color='disabled' />
+                return <Iconify icon='ant-design:check-circle-twotone' sx={{ fontSize: fontSize || 24, color: 'disabled' }} />
             default:
-                return <CircleOutlinedIcon />
+                return <Iconify icon='akar-icons:circle-alert' />
         }
     }
     return findIcon()
