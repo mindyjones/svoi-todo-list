@@ -6,7 +6,7 @@ import { FC } from 'react';
 
 // ----------------------------------------------------------------------
 
-interface IconifyProps {
+export type IconifyProps = {
     icon: string,
     sx?: object
 };
