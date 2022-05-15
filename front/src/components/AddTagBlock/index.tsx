@@ -92,22 +92,24 @@ const AddTagBlock = () => {
                         <TextField
                             fullWidth
                             hiddenLabel
-                            id="filled-hidden-label-small"
                             defaultValue=""
+                            autoComplete='false'
                             size="small"
+                            autoFocus
                             onChange={titleHandler}
                         />
                     </Grid>
                     <Grid item container justifyContent='space-between' mb={2}>
                         {
-                            Object.values(tagsColor).map(color =>
+                            Object.values(tagsColor).map((color, index) =>
                                 <IconButton aria-label="select color"
+                                    key={index}
                                     disableRipple
                                     sx={{ padding: 0 }}
                                     onClick={() => colorHandler(color)}
                                     value={title}
                                 >
-                                    <StyledIcon icon='akar-icons:circle-fill' key={color}
+                                    <StyledIcon icon='akar-icons:circle-fill'
                                         sx={selectColor === color ?
                                             { outline: '3px solid grey', borderRadius: '50%', color }
                                             : { color }}
