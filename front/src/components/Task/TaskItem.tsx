@@ -12,7 +12,7 @@ interface TaskItemProps {
 }
 
 const TaskItem: FC<TaskItemProps> = ({ task, remove, update }) => {
-    const icon = useTaskIcon({ state: task.state, fontSize: 32 })
+    const icon = useTaskIcon({ state: task.state, fontSize: 28 })
 
     const handleRemove = (event: React.MouseEvent) => {
         event.stopPropagation()

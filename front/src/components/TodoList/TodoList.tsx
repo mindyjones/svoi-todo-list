@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Box, Container, Divider } from '@mui/material'
+import { Box, Container, Divider, Stack } from '@mui/material'
 
 import { todoAPI } from 'services/TodoService';
 import { ITodo, ITag } from 'models'
@@ -25,8 +25,8 @@ const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
         setNewTaskText(event.target.value)
     }
 
-    const sumbitHandler: React.FormEventHandler<HTMLFormElement> = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const sumbitHandler = async () => {
+        if (newTaskText === '') return
         await createTodo({
             title: newTaskText,
             date: "",
@@ -51,15 +51,11 @@ const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
 
             <Container className='todolist__container'>
                 {todos && todos.map(e =>
-                    <Container key={e.id} className='task__container'>
+                    <Stack key={e.id} className='task__container'>
                         <TaskItem task={e} remove={removeHandler} update={updateHandler} />
-                    </Container>
+                    </Stack>
                 )}
-                <Box component="form" onSubmit={sumbitHandler}
-                    className='todolist__input'
-                >
-                    <TodoCreate onChange={handleChange} newTaskText={newTaskText} />
-                </Box>
+                <TodoCreate onChange={handleChange} newTaskText={newTaskText} sumbitHandler={sumbitHandler} />
             </Container>
         </>
     )
