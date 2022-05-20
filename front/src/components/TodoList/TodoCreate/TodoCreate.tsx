@@ -74,7 +74,12 @@ const TodoCreate: FC<TodoCreateProps> = ({ onChange, newTaskText, sumbitHandler 
 
                         <Grid item>
                             <Button
-                                variant="contained"
+                                variant="outlined"
+
+                                sx={{
+                                    color: 'rgba(0, 0, 0, 0.26)',
+                                    border: '1px solid rgba(0, 0, 0, 0.12)'
+                                }}
                                 onClick={handleShow}
                             >Отмена</Button>
                         </Grid>

@@ -46,10 +46,10 @@ const TodoList: React.FC<TodoListProps> = ({ todos, selectedTag }) => {
 
     return (
         <>
-            <TodoListTitle selectedTag={selectedTag} />
-            <Divider />
-
             <Container className='todolist__container'>
+                <TodoListTitle selectedTag={selectedTag} />
+                <Divider />
+
                 {todos && todos.map(e =>
                     <Stack key={e.id} className='task__container'>
                         <TaskItem task={e} remove={removeHandler} update={updateHandler} />
