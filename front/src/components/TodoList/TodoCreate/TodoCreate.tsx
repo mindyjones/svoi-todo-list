@@ -6,8 +6,11 @@ import React, { FC, useState } from 'react'
 
 const CustomLabel = styled(Grid)(() => ({
     cursor: 'pointer',
+    color: '#B4B4B4',
     '&:hover': {
         // backgroundColor: grey[100],
+        color: '#878787',
+        // textShadow: '1px 1px #000',
 
     },
 }));
@@ -22,6 +25,7 @@ const TodoCreate: FC<TodoCreateProps> = ({ onChange, newTaskText, sumbitHandler 
     const [showInput, setShowInput] = useState(false)
 
     const handleClick = () => {
+
         setShowInput(false)
         sumbitHandler()
     }
@@ -37,11 +41,11 @@ const TodoCreate: FC<TodoCreateProps> = ({ onChange, newTaskText, sumbitHandler 
                     <CustomLabel alignItems="center" direction='row' spacing={3} container onClick={handleShow}>
                         <Grid item xs={1}>
                             <IconButton disableRipple disableFocusRipple >
-                                <Iconify icon='akar-icons:plus' sx={{ fontSize: 28, color: '#B4B4B4' }} />
+                                <Iconify icon='akar-icons:plus' sx={{ fontSize: 28 }} />
                             </IconButton>
                         </Grid>
                         <Grid item xs={9}>
-                            <Typography variant='body1' color='#B4B4B4'>
+                            <Typography variant='body1'>
                                 Новая задача
                             </Typography>
                         </Grid>
@@ -53,7 +57,7 @@ const TodoCreate: FC<TodoCreateProps> = ({ onChange, newTaskText, sumbitHandler 
                             fullWidth
                             hiddenLabel
                             defaultValue=""
-                            autoComplete='false'
+                            autoComplete='off'
                             size="small"
                             autoFocus
                             onChange={onChange}

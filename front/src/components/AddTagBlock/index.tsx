@@ -93,7 +93,7 @@ const AddTagBlock = () => {
                             fullWidth
                             hiddenLabel
                             defaultValue=""
-                            autoComplete='false'
+                            autoComplete='off'
                             size="small"
                             autoFocus
                             onChange={titleHandler}
