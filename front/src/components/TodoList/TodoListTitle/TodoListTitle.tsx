@@ -59,7 +59,7 @@ const TodoListTitle: FC<TodoListTitleProps> = () => {
                 : selectedTag.title
                     ? <Typography className='todolist__title todolist__title-tag' variant='h1' onClick={handleClick} sx={{ color: selectedTag.color }}>
                         {selectedTag.title}
-                        <EditIcon className='todolist__title-edit' />
+                        <EditIcon className='todolist__title-edit' sx={{ color: '#DFDFDF' }} />
                     </Typography>
                     : <Typography className={'todolist__title'} variant='h1'>
                         {'Все задачи'}
