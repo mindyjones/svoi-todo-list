@@ -36,7 +36,9 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "cypress": "cypress open",
+        "bd": "json-server --watch ./json/bd.json"
     },
     "eslintConfig": {
         "extends": [
@@ -57,6 +59,8 @@
         ]
     },
     "devDependencies": {
-        "@iconify/react": "^3.2.1"
+        "@iconify/react": "^3.2.1",
+        "@testing-library/cypress": "^8.0.2",
+        "cypress": "^9.6.1"
     }
 }
