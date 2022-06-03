@@ -5,6 +5,7 @@ import {CssBaseline} from '@mui/material';
 import {ThemeProvider, createTheme, StyledEngineProvider} from '@mui/material/styles';
 //
 import typography from './typography';
+import palette from './palette';
 // ----------------------------------------------------------------------
 
 ThemeConfig.propTypes = {
@@ -14,7 +15,7 @@ ThemeConfig.propTypes = {
 export default function ThemeConfig({children}) {
     const themeOptions = useMemo(
         () => ({
-            // palette,
+            palette,
             // shape: {borderRadius: 8},
             typography,
             // shadows,
