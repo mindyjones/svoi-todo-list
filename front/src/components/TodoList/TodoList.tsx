@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Box, Container, Divider, Stack } from '@mui/material'
+import { Container, Divider, Stack } from '@mui/material'
 
 import { todoAPI } from 'services/TodoService';
 import { ITodo, ITag } from 'models'
